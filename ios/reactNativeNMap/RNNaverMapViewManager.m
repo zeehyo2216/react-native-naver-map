@@ -259,9 +259,9 @@ RCT_EXPORT_METHOD(animateToRegion:(nonnull NSNumber *)reactTag
   }];
 }
 
-RCT_EXPORT_VIEW_PROPERTY(onInitialized, RCTDirectEventBlock);
-RCT_EXPORT_VIEW_PROPERTY(onCameraChange, RCTDirectEventBlock);
-RCT_EXPORT_VIEW_PROPERTY(onTouch, RCTDirectEventBlock);
-RCT_EXPORT_VIEW_PROPERTY(onMapClick, RCTDirectEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onInitialized, RCTBubblingEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onCameraChange, RCTBubblingEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onTouch, RCTBubblingEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onMapClick, RCTBubblingEventBlock);
 
 @end
