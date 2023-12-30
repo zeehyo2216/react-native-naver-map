@@ -13,6 +13,7 @@
 #import <NMapsMap/NMFCameraUpdate.h>
 #import <NMapsMap/NMFCameraPosition.h>
 #import <NMapsGeometry/NMGLatLng.h>
+#import <NMapsGeometry/NMGLatLngBounds.h>
 
 #import "RCTConvert+NMFMapView.h"
 #import "RNNaverMapView.h"
