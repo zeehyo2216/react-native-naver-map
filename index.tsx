@@ -119,10 +119,11 @@ export interface NaverMapViewProps {
     stopGesturesEnabled?: boolean;
     liteModeEnabled?: boolean;
     useTextureView?: boolean;
-    children?: Element;
+    children?: React.Element;
 }
 
 export default class NaverMapView extends Component<NaverMapViewProps, {}> {
+    props: NaverMapViewProps;
     ref?: RNNaverMapView;
     nodeHandle?: null | number;
 
@@ -268,6 +269,8 @@ export interface MarkerProps extends MapOverlay {
 }
 
 export class Marker extends Component<MarkerProps> {
+    props: MarkerProps;
+    
     render() {
         return <RNNaverMapMarker
             {...this.props}
@@ -296,6 +299,8 @@ export interface CircleProps extends MapOverlay {
 }
 
 export class Circle extends Component<CircleProps> {
+    props: CircleProps;
+    
     render() {
         return <RNNaverMapCircleOverlay {...this.props} />;
     }
@@ -308,6 +313,8 @@ interface PolylineProps extends Omit<MapOverlay, "coordinate"> {
 }
 
 export class Polyline extends Component<PolylineProps> {
+    props: PolylineProps;
+    
     render() {
         return <RNNaverMapPolylineOverlay {...this.props} />;
     }
@@ -322,6 +329,8 @@ interface PolygonProps extends Omit<MapOverlay, "coordinate"> {
 }
 
 export class Polygon extends Component<PolygonProps> {
+    props: PolygonProps;
+
     render() {
         return Platform.select({
             android: () => <RNNaverMapPolygonOverlay {...this.props} />,
@@ -351,6 +360,8 @@ export interface PathProps extends Omit<MapOverlay, "coordinate"> {
 }
 
 export class Path extends Component<PathProps> {
+    props: PathProps;
+    
     render() {
         return <RNNaverMapPathOverlay
             {...this.props}
@@ -368,7 +379,7 @@ function getImageUri(src?: ImageSourcePropType): string | null {
     return imageUri;
 }
 
-function parseColor(color?: string | null): string | null | undefined | number {
+function parseColor(color?: string | null): string | ProcessedColorValue {
     if (color && Platform.OS === 'ios')
         return processColor(color);
     return color;
