@@ -20,10 +20,10 @@
 @interface RNNaverMapView : NMFNaverMapView <NMFMapViewDelegate>
 
 @property (nonatomic, weak) RCTBridge *bridge;
-@property (nonatomic, copy) RCTDirectEventBlock onInitialized;
-@property (nonatomic, copy) RCTDirectEventBlock onCameraChange;
-@property (nonatomic, copy) RCTDirectEventBlock onTouch;
-@property (nonatomic, copy) RCTDirectEventBlock onMapClick;
+@property (nonatomic, copy) RCTBubblingEventBlock onInitialized;
+@property (nonatomic, copy) RCTBubblingEventBlock onCameraChange;
+@property (nonatomic, copy) RCTBubblingEventBlock onTouch;
+@property (nonatomic, copy) RCTBubblingEventBlock onMapClick;
 
 @property (nonatomic, assign) BOOL showsCompass;
 @property (nonatomic, assign) BOOL zoomEnabled;
